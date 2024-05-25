@@ -1,0 +1,9 @@
+//项目提供scss全局变量
+@font-face {
+    font-family: "bafont";
+    src: url("../assets/font/bafont.TTF") format("truetype");
+}
+:root {
+    --main-color: #4ed7fb;
+    --header-color:#505050;
+}
