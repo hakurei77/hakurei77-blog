@@ -1,6 +1,8 @@
 <template>
     <div class="flex justify-center items-center">
-        <FuncButton v-for="item,i in navList" :key="i" :icon="item.title" class="hidden sm:flex" />
+        <template v-for="(item, i) in navList" :key="i">
+            <FuncButton :icon="item.title" class="hidden lg:flex" />
+        </template>
         <Avatar class="ml-[4px]" :avatar="avatar" />
     </div>
 </template>

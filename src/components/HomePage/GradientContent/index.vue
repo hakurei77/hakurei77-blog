@@ -1,13 +1,13 @@
 <template>
-  <div class="out w-full font-[cursive]
-              text-[1rem] 
-              lg:text-[1.2rem]
-              xxl:text-[1.3rem] 
-              flex-col flex relative ">
-    <div class="in w-full p-[1rem] text-[var(--main-white)] 
+  <div class="outer-border w-full flex-col flex relative
+              text-[1rem]">
+    <div class="inner-border w-full transition-all duration-[var(--duration-time)]
+                rounded-bl-[16px] rounded-tr-[16px] 
+                text-[var(--main-white)] 
                 hover:bg-[rgba(255,255,255,0.6)] 
-              transition-all duration-300 hover:text-[black]
-              rounded-bl-[1rem] rounded-tr-[1rem] hover:backdrop-blur-lg">
+                hover:text-[black]
+                  hover:backdrop-blur-lg
+                  p-[1rem]">
       <template v-for="(item, i) in content" :key="i">
         <span class="w-full" :class="classComputed(i)" :style="getStyle(item , i)">
           {{ item.text }}
@@ -78,54 +78,5 @@ span {
              var(--animation-delay) 
              forwards;
   display: inline-block;
-}
-.out:before {
-    content: '';
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    height: 30px;
-    width: 30px;
-    background-color: var(--main-color);
-    -webkit-clip-path: polygon(100% 0%,90% 10%,10% 10%,10% 90%,0% 100%,0% 0%);
-            clip-path: polygon(100% 0%,90% 10%,10% 10%,10% 90%,0% 100%,0% 0%);
-}
-.out:after {
-  content: '';
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  right: 0;
-  height: 30px;
-  width: 30px;
-  background-color: var(--main-color);
-  -webkit-clip-path: polygon(90% 10%,100% 0%,100% 100%,0% 100%,10% 90%,90% 90%);
-          clip-path: polygon(0% 100%,10% 90%,90% 90%,90% 10%,100% 0%,100% 100%);
-  
-}
-.in:before{
-  content: '';
-  position: absolute;
-  z-index: 1;
-  top: 6px;
-  left: 6px;
-  height: 12px;
-  width: 12px;
-  background-color: var(--main-color);
-  -webkit-clip-path: polygon(100% 0%,90% 15%,15% 15%,15% 90%,0% 100%,0% 0%);
-          clip-path: polygon(100% 0%,90% 15%,15% 15%,15% 90%,0% 100%,0% 0%);
-}
-.in:after{
-  content: '';
-  position: absolute;
-  z-index: 1;
-  bottom: 6px;
-  right: 6px;
-  height: 12px;
-  width: 12px;
-  background-color: var(--main-color);
-  -webkit-clip-path: polygon(80% 20%,100% 0%,100% 100%,0% 100%,20% 80%,80% 80%);
-          clip-path: polygon(80% 20%,100% 0%,100% 100%,0% 100%,20% 80%,80% 80%);
 }
 </style>

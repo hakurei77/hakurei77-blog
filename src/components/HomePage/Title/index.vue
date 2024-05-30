@@ -1,31 +1,34 @@
 <template>
-    <div class="font-['bafont'] text-[var(--main-white)]">
+    <div class="text-[var(--main-white)]">
         <p class="text-[1.3rem] mb-[0.4rem] font-['bafontxi']  
-                 lg:text-[3rem] lg:mb-[0.7rem]/">{{ welcomeTitle }}</p>
-        <h1 class="relative 
-            title-underline
-            lg:after:top-[3.4rem] lg:after:right-[3.2rem] lg:after:h-[0.7rem]
-            xxl:after:top-[4.3rem] xxl:after:right-[3.5rem] xxl:after:h-[0.7rem]
+                  sm:text-[1.5rem] sm:mb-[0.7rem]
+                  xl:text-[2rem] xl:mb-[0.7rem]
+                  ">
+            {{ welcomeTitle }}
+        </p>
+        <h1 class="relative title-underline
+            sm:after:top-[1.9rem] sm:after:right-[0.5rem]
+            xl:after:top-[2.8rem] xl:after:right-[3.8rem] xl:after:h-[0.7rem]
              ">
             <span class="text-[1.8rem] z-[1] relative
-                         lg:text-[4rem] 
-                         xxl:text-[5rem]
-                         ">{{ mainTitle }}</span>
+                         sm:text-[2.3rem] 
+                         xl:text-[3.5rem]
+                         ">
+                {{ mainTitle }}
+            </span>
         </h1>
         <p class="w-full flex justify-end">
-            <i class="mr-[0.45rem] 
-                    skew-f
-                    lg:before:w-[0.813rem] 
-                    lg:before:h-[1rem] 
-                    lg:after:w-[0.813rem] 
-                    lg:after:h-[1rem] 
+            <i class="mr-[0.45rem] skew-f
+                    xl:before:w-[0.813rem] 
+                    xl:before:h-[1.01rem] 
+                    xl:after:w-[0.813rem] 
+                    xl:after:h-[1rem] 
                     "></i>
-            <i class="mr-[0.7rem]
-                    skew-s
-                    lg:before:w-[0.813rem] 
-                    lg:before:h-[1rem] 
-                    lg:after:w-[0.813rem] 
-                    lg:after:h-[1rem] 
+            <i class="mr-[0.7rem] skew-s
+                    xl:before:w-[0.813rem] 
+                    xl:before:h-[1.01rem] 
+                    xl:after:w-[0.813rem] 
+                    xl:after:h-[1rem] 
             "></i>
         </p>
     </div>

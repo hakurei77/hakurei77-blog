@@ -1,27 +1,21 @@
 <template>
-    <div>
-        <div class="w-[16rem] ml-10 rounded-lg
-                    lg:ml-20 
-                    lg:w-[39rem]
-                    xxl:w-[48rem] ">
-            <Title class="w-[110%]"
+    <div class="flex items-center">
+        <div class="w-[16rem] ml-[32px]
+                    sm:w-[20rem]
+                    sm:ml-[64px] sm:absolute sm:top-[13rem]
+                    xl:w-[34rem]
+                   ">
+            <Title class="w-[110%] font-['bafont']"
                     :welcome-title="title" 
                     :main-title="mainTitle" />
-            <div class="w-[110%] 
-                        mt-[0.5rem] mb-[0.5rem]
-                        lg:mt-[0.6rem] lg:mb-[0.6rem]
-                        xxl:mt-[1rem] xxl:mb-[1rem]
-                        ">
-                <img class="w-full" :src="StyleLine" alt=""> 
+            <div class="w-full my-[10px]
+                        sm:mt-[0.6rem] sm:mb-[0.6rem]">
+                <img class="w-full" :src="StyleLine" alt="dividingLine"> 
             </div>
-            <GradientContent :content="content" />
-            <Author :authImg="AuthorImg"
-                    :enName="enName"
-                    :cnName="cnName"
-                    :introduction="introduction"
-                    :linkList="linkList"
-            ></Author>
+            <GradientContent class="w-full font-[cursive]" :content="content" />
+           
         </div>
+        <PosterArrow class="absolute bottom-[16px]" />
     </div>
 </template>
 
@@ -29,6 +23,7 @@
 import Title from "./Title/index.vue"
 import GradientContent from "./GradientContent/index.vue"
 import Author from "./Author/index.vue"
+import PosterArrow from "./posterArrow/index.vue"
 import StyleLine from "@/assets/images/styleline.png"
 import AuthorImg from "@/assets/images/author.jpg"
 
