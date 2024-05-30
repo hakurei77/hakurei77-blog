@@ -1,14 +1,16 @@
 <template>
-    <div class="w-10 h-10 bg-white rounded-full 
-                ml-2 mr-2 hover:scale-110 transition-all
-                hover:shadow-lg
-                cursor-pointer overflow-hidden">
-        <img :src="Avatar" alt="">  
+    <div class="w-[44px] h-[44px] cursor-pointer overflow-hidden 
+                rounded-full transition-all duration-[var(--duration-time)]
+                hover:scale-110 hover:shadow-lg">
+        <img :src="avatar" alt="userAvatar">  
     </div>
 </template>
 
 <script setup lang='ts'>
-import Avatar from "@/assets/images/avatar.png"
+import { withDefaults } from "vue";
+withDefaults(defineProps<{ 
+  avatar: string 
+}>(), {});
 </script>
 
 <style scoped lang="scss">

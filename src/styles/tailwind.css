@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.skew-f{
+    @apply 
+    before:flex
+    before:content-[''] 
+    before:bg-[var(--main-color)] 
+    before:[transform-origin:left_top] 
+    before:[transform:skew(35deg)] 
+    before:transition-all 
+    before:duration-[0.3s];
+    @apply 
+    after:flex
+    after:content-[''] 
+    after:bg-[var(--main-color)] 
+    after:[transform-origin:left_bottom] 
+    after:[transform:skew(-35deg)] 
+    after:transition-all 
+    after:duration-[0.3s];
+}
+.skew-s{
+    @apply 
+    before:flex
+    before:content-[''] 
+    before:bg-[var(--main-white)] 
+    before:[transform-origin:left_top] 
+    before:[transform:skew(35deg)] 
+    before:transition-all 
+    before:duration-[0.3s];
+    @apply 
+    after:flex
+    after:content-[''] 
+    after:bg-[var(--main-white)] 
+    after:[transform-origin:left_bottom] 
+    after:[transform:skew(-35deg)] 
+    after:transition-all 
+    after:duration-[0.3s];
+}
+.title-underline{
+    @apply
+    after:w-[50%] 
+    after:absolute 
+    after:content-[''] 
+    after:transition-all after:duration-[0.3s] after:z-0
+    after:bg-[var(--main-color)]
+    after:top-[1.4rem] after:right-[1rem]  after:[border-radius:0.2rem] after:h-[0.5rem]
+}
