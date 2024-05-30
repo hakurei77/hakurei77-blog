@@ -9,5 +9,22 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
+    <script>
+      (() => {
+        function calcFontSize() {
+          const windowHeight = window.innerHeight;
+          return (30 * (windowHeight / 1500) > 400) ? '400px' : `${30 * (windowHeight / 1500)}px`;
+        }
+
+        function handleResize() {
+          document.documentElement.style.fontSize = calcFontSize();
+        }
+
+        window.addEventListener('load', () => {
+          document.documentElement.style.fontSize = calcFontSize();
+        });
+        window.addEventListener('resize', handleResize);
+      })();
+    </script>
   </body>
 </html>

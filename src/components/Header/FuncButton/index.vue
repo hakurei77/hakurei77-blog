@@ -1,13 +1,13 @@
 <template>
-    <div class="w-8 h-8 rounded-full cursor-pointer 
+    <div class="w-[32px] h-[32px] rounded-full cursor-pointer 
                 hover:shadow-md hover:bg-[--main-color] 
-                transition-all duration-200
+                transition-all duration-[var(--duration-time)]
                 flex items-center justify-center
-                ml-1 mr-1
+                mr-[8px]
                 "
      @mouseover="hoverColor = true" 
      @mouseleave="hoverColor = false">
-  <SvgIconG :name="icon" :color="hoverColor ? '#fff' : ''" class="w-[80%] h-[80%] transition-all duration-200"></SvgIconG>
+  <SvgIconG :name="icon" :color="hoverColor ? '#fff' : ''" class="w-[80%] h-[80%] transition-all duration-[var(--duration-time)]"></SvgIconG>
 </div>
 </template>
 
