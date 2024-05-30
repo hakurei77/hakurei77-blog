@@ -1,6 +1,6 @@
 <template>
-  <nav class="flex items-center relative h-full">
-    <ul class="hidden h-full items-center
+  <nav class="hidden sm:flex items-center relative h-full">
+    <ul class="h-full items-center
                 sm:flex">
       <li class="h-full cursor-pointer flex items-center
                 mr-[24px] relative transition-all 
@@ -10,7 +10,8 @@
         @mouseover="moveTriangle(i)"
         @mouseleave="moveTriangle(0)"
         @click="goRoute(item.path)">
-        <SvgIconG v-if="item.icon != null" :name="item.icon" class="mr-[8px] w-[1em] h-[1em]" />
+        <SvgIconG class="hidden xl:flex mr-[8px] w-[1em] h-[1em]"
+            v-if="item.icon != null" :name="item.icon" />
         {{ item.title }}
       </li>
     </ul>
@@ -39,6 +40,7 @@ const goRoute = (dp: string) => {
   router.push(dp)
 }
 /*————————————————style————————————————————————————————*/
+const screenWidth = window.innerWidth;
 const trianglePosition = ref(0)
 const moveTriangle = (index: number = 1) => {
   const liElements = document.querySelectorAll('li');
@@ -46,7 +48,13 @@ const moveTriangle = (index: number = 1) => {
   const targetLiRect = targetLi.getBoundingClientRect();
   const navRect = liElements[0].parentElement?.getBoundingClientRect();
   if (navRect) {
-    const offset = targetLiRect.left - navRect.left + targetLiRect.width / 2 + 5; 
+    let offset
+    if(screenWidth <= 1280){
+      offset = targetLiRect.left - navRect.left + targetLiRect.width / 2 - 8;
+    }
+    else{
+      offset = targetLiRect.left - navRect.left + targetLiRect.width / 2 + 5; 
+    }
     trianglePosition.value = offset;
   }
 }

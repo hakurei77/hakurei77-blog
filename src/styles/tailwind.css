@@ -9,7 +9,7 @@
     before:bg-[var(--main-color)] 
     before:[transform-origin:left_top] 
     before:[transform:skew(35deg)] 
-    before:transition-all 
+    before:transition-all
     before:duration-[0.3s];
     @apply 
     after:flex
@@ -46,4 +46,52 @@
     after:transition-all after:duration-[0.3s] after:z-0
     after:bg-[var(--main-color)]
     after:top-[1.4rem] after:right-[1rem]  after:[border-radius:0.2rem] after:h-[0.5rem]
+}
+.outer-border{
+    @apply
+    before:content-['']
+    before:absolute
+    before:z-[1]
+    before:top-0
+    before:left-0
+    before:h-[30px]
+    before:w-[30px]
+    before:[background-color:var(--main-color)]
+    before:[-webkit-clip-path:polygon(100%_0%,90%_10%,10%_10%,10%_90%,0%_100%,0%_0%)]
+    before:[clip-path:polygon(100%_0%,90%_10%,10%_10%,10%_90%,0%_100%,0%_0%)];
+    @apply
+    after:content-['']
+    after:absolute
+    after:z-[1]
+    after:bottom-0
+    after:right-0
+    after:h-[30px]
+    after:w-[30px]
+    after:[background-color:var(--main-color)]
+    after:[-webkit-clip-path:polygon(90%_10%,100%_0%,100%_100%,0%_100%,10%_90%,90%_90%)]
+    after:[clip-path:polygon(90%_10%,100%_0%,100%_100%,0%_100%,10%_90%,90%_90%)];
+}
+.inner-border{
+    @apply
+    before:content-['']
+    before:absolute
+    before:z-[1]
+    before:top-[6px]
+    before:left-[6px]
+    before:h-[12px]
+    before:w-[12px]
+    before:[background-color:var(--main-color)]
+    before:[-webkit-clip-path:polygon(100%_0%,90%_15%,15%_15%,15%_90%,0%_100%,0%_0%)]
+    before:[clip-path:polygon(100%_0%,90%_15%,15%_15%,15%_90%,0%_100%,0%_0%)];
+    @apply
+    after:content-['']
+    after:absolute
+    after:z-[1]
+    after:bottom-[6px]
+    after:right-[6px]
+    after:h-[12px]
+    after:w-[12px]
+    after:[background-color:var(--main-color)]
+    after:[-webkit-clip-path:polygon(80%_20%,100%_0%,100%_100%,0%_100%,20%_80%,80%_80%)]
+    after:[clip-path:polygon(80%_20%,100%_0%,100%_100%,0%_100%,20%_80%,80%_80%)];
 }
