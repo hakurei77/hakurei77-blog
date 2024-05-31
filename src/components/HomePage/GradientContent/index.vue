@@ -1,6 +1,6 @@
 <template>
   <div class="outer-border w-full flex-col flex relative
-              text-[1rem]">
+              text-[0.9rem]">
     <div class="inner-border w-full transition-all duration-[var(--duration-time)]
                 rounded-bl-[16px] rounded-tr-[16px] 
                 text-[var(--main-white)] 

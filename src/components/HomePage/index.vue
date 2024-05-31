@@ -3,7 +3,7 @@
         <div class="w-[16rem] ml-[32px]
                     sm:w-[20rem]
                     sm:ml-[64px] sm:absolute sm:top-[13rem]
-                    xl:w-[34rem]
+                    xl:w-[32rem]
                    ">
             <Title class="w-[110%] font-['bafont']"
                     :welcome-title="title" 
