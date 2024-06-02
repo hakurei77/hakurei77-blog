@@ -15,7 +15,6 @@
             <GradientContent class="w-full font-[cursive]" :content="content" />
            
         </div>
-        <PosterArrow class="absolute bottom-[16px]" />
     </div>
 </template>
 

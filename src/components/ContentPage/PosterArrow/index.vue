@@ -1,8 +1,8 @@
 <template>
     <div class="w-full flex flex-col items-center">
         <div class="cursor-pointer transition-all duration-[var(--duration-time)]"
-            @mouseenter="hoverAnimationOne = true , hoverAnimationTwo = false "
-            @mouseleave="hoverAnimationOne = false , hoverAnimationTwo = true "
+            @mouseenter="mouseEnter(up)"
+            @mouseleave="mouseLeave(up)"
             :class="{ 
                 'arrowRotateOne': hoverAnimationOne,
                 'arrowRotateTwo': hoverAnimationTwo
@@ -15,11 +15,36 @@
 </template>
 
 <script setup lang='ts'>
-import { ref } from 'vue';
+import { ref,withDefaults,watchEffect } from 'vue';
 import PosterArrow from "@/assets/icons/posterarrow.png";
-
+const props = withDefaults(defineProps<{
+    up?:boolean
+}>(),{
+    up:false
+})
 const hoverAnimationOne = ref(false);
 const hoverAnimationTwo = ref(false);
+
+function mouseEnter(up:boolean){
+    if(!up){
+        hoverAnimationOne.value = true , hoverAnimationTwo.value = false
+    }
+}
+function mouseLeave(up:boolean){
+    if(!up){
+        hoverAnimationOne.value = false , hoverAnimationTwo.value = true
+    }
+}
+
+watchEffect(()=>{
+    if(props.up){
+        hoverAnimationOne.value = true , hoverAnimationTwo.value = false
+    }
+    if(!props.up){
+        hoverAnimationOne.value = false , hoverAnimationTwo.value = true
+    }
+})
+
 </script>
 
 <style scoped lang="scss">

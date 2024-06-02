@@ -95,3 +95,25 @@
     after:[-webkit-clip-path:polygon(80%_20%,100%_0%,100%_100%,0%_100%,20%_80%,80%_80%)]
     after:[clip-path:polygon(80%_20%,100%_0%,100%_100%,0%_100%,20%_80%,80%_80%)];
 }
+.headerArrow{
+    @apply
+    before:content-['']
+    before:absolute
+    before:z-[1]
+    before:bottom-[-7px]
+    before:left-0
+    before:h-[16px]
+    before:w-[16px]
+    before:[background-color:var(--main-color)]
+    before:[transform:scaleX(1)];
+    @apply
+    after:content-['']
+    after:absolute
+    after:z-[1]
+    after:bottom-[-7px]
+    after:right-0
+    after:h-[16px]
+    after:w-[16px]
+    after:[background-color:var(--main-color)]
+    after:[transform:scaleX(1)]
+}
